@@ -1,4 +1,5 @@
 import os
+import sys
 import pandas as pd
 
 from src.logger import logging
@@ -62,18 +63,18 @@ class CustomData:
     def get_data_as_dataframe(self):
         try:
             custom_data_input_dict = {
-                'age':self.age,
-                'education-num':self.education_num,
-                'capital-gain':self.capital_gain,
-                'capital-loss':self.capital_loss,
-                'hours-per-week':self.hours_per_week,
-                'workclass':self.workclass,
-                'marital-status':self.marital_status,
-                'occupation':self.occupation,
-                'relationship':self.relationship,
-                'race':self.race,
-                'sex':self.sex,
-                'native-country':self.native_country 
+                'age':[self.age],
+                'education-num':[self.education_num],
+                'capital-gain':[self.capital_gain],
+                'capital-loss':[self.capital_loss],
+                'hours-per-week':[self.hours_per_week],
+                'workclass':[self.workclass],
+                'marital-status':[self.marital_status],
+                'occupation':[self.occupation],
+                'relationship':[self.relationship],
+                'race':[self.race],
+                'sex':[self.sex],
+                'native-country':[self.native_country] 
             }
 
             df = pd.DataFrame(custom_data_input_dict)
